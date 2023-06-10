@@ -16,18 +16,28 @@ public class LineBotApp : WebhookApplication
     protected override async Task OnMessageAsync(MessageEvent ev)
     {
         var result = null as List<ISendMessage>;
+        
 
         switch (ev.Message)
         {
             //文字訊息
             case TextEventMessage textMessage:
+            
             {
                 //頻道Id
                 var channelId = ev.Source.Id;
                 //使用者Id
                 var userId = ev.Source.UserId;
+                
+                
                 //使用者輸入的文字
                 var text = ((TextEventMessage)ev.Message).Text;
+                
+                
+                if (text.Contains("抽") && text.Contains("包子"))
+                {
+                    new TextMessage("xxx是包子");
+                }
                     
                 if (PoolHasMsg(text))
                 {
@@ -45,6 +55,10 @@ public class LineBotApp : WebhookApplication
                         //將資料寫入記憶體池
                         TeachDog(text);
                     }
+                    
+                    
+                    
+                    
                 }
                 /*
                 //回傳 hellow
