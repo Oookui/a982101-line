@@ -62,9 +62,15 @@ public class LineBotApp : WebhookApplication
                     
                     
                 }
-                if (text.Contains("抽") )
+                var message = new TextMessage(
+                    $"{Char.ConvertFromUtf32(0x10005C)} Text Message");
+                
+                await _messagingClient.ReplyMessageAsync(ev.ReplyToken, 
+                    new List<ISendMessage> { message });
+                
+                if (text.Contains("包子") )
                 {
-                    var message = new TextMessage("肉包" + text);
+                    message = new TextMessage("肉包" + text);
                 }
                 
                 
