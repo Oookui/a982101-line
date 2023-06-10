@@ -46,13 +46,13 @@ public class LineBotApp : WebhookApplication
                         TeachDog(text);
                     }
                 }
-                /*
+                
                 //回傳 hellow
                 result = new List<ISendMessage>
                 {
                     new TextMessage("有事?")
                 };
-                */
+                
             }
                 break;
         }
