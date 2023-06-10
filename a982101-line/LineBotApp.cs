@@ -34,7 +34,7 @@ public class LineBotApp : WebhookApplication
                 var text = ((TextEventMessage)ev.Message).Text;
                 
                 
-               
+                
                 
                 
                     
@@ -48,10 +48,7 @@ public class LineBotApp : WebhookApplication
                     };
                 }
                 
-                if (text.Contains("抽") && text.Contains("包子"))
-                {
-                    var message = new TextMessage("肉包" + text);
-                }
+                
                 
                 else
                 {
@@ -65,13 +62,18 @@ public class LineBotApp : WebhookApplication
                     
                     
                 }
-                /*
+                if (text.Contains("抽") )
+                {
+                    var message = new TextMessage("肉包" + text);
+                }
+                
+                
                 //回傳 hellow
                 result = new List<ISendMessage>
                 {
                     new TextMessage("有事?")
                 };
-                */
+                
             }
                 break;
         }
