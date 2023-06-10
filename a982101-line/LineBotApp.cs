@@ -36,8 +36,10 @@ public class LineBotApp : WebhookApplication
                 
                 if (text.Contains("抽") && text.Contains("包子"))
                 {
-                    var message = new TextMessage("xxx是包子" + text);
+                    var message = new TextMessage("肉包" + text);
                 }
+                
+                
                     
                 if (PoolHasMsg(text))
                 {
