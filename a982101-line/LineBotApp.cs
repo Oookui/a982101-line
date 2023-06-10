@@ -63,7 +63,7 @@ public class LineBotApp : WebhookApplication
                     
                 }
                 var message = new TextMessage(
-                    $"{Char.ConvertFromUtf32(0x10005C)} Text Message");
+                    "{Char. 嘿嘿");
                 
                 await _messagingClient.ReplyMessageAsync(ev.ReplyToken, 
                     new List<ISendMessage> { message });
@@ -73,13 +73,13 @@ public class LineBotApp : WebhookApplication
                     message = new TextMessage("肉包" + text);
                 }
                 
-                
+                /*
                 //回傳 hellow
                 result = new List<ISendMessage>
                 {
                     new TextMessage("有事?")
                 };
-                
+                */
             }
                 break;
         }
