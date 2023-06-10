@@ -62,9 +62,8 @@ public class LineBotApp : WebhookApplication
                     
                     
                 }
-                var message = new TextMessage(" 嘿嘿");
-                message = new TextMessage(" 掰掰");
-                
+                var message = new TextMessage("我只做得出一句話qwq");
+
                 await _messagingClient.ReplyMessageAsync(ev.ReplyToken, 
                     new List<ISendMessage> { message });
                 
