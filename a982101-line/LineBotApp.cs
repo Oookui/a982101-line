@@ -34,10 +34,7 @@ public class LineBotApp : WebhookApplication
                 var text = ((TextEventMessage)ev.Message).Text;
                 
                 
-                if (text.Contains("抽") && text.Contains("包子"))
-                {
-                    var message = new TextMessage("肉包" + text);
-                }
+               
                 
                 
                     
@@ -50,6 +47,12 @@ public class LineBotApp : WebhookApplication
                         new TextMessage(response)
                     };
                 }
+                
+                if (text.Contains("抽") && text.Contains("包子"))
+                {
+                    var message = new TextMessage("肉包" + text);
+                }
+                
                 else
                 {
                     if (CheckFormat(text))
