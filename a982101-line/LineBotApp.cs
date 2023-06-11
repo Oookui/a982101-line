@@ -50,6 +50,7 @@ public class LineBotApp : WebhookApplication
                 
                 
                 
+                
                 else
                 {
                     if (CheckFormat(text))
@@ -58,23 +59,23 @@ public class LineBotApp : WebhookApplication
                         TeachDog(text);
                     }
                     
+                    var outputtext = text;
+
+                    if (text.Contains("包子"))
+                    {
+                        outputtext = "要吃肉包?";
+                    }
+                    if (text.Contains("不要肉包"))
+                    {
+                        outputtext = "要吃菜包?";
+                    }
+                    if (text.Contains("不要包子"))
+                    {
+                        outputtext = "吃土";
+                    }
                     
                 }
 
-                var outputtext = text;
-
-                if (text.Contains("包子"))
-                {
-                    outputtext = "要吃肉包?";
-                }
-                if (text.Contains("不要肉包"))
-                {
-                    outputtext = "要吃菜包?";
-                }
-                if (text.Contains("不要包子"))
-                {
-                    outputtext = "吃土";
-                }
                 
                 
                 
