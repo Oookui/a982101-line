@@ -59,18 +59,36 @@ public class LineBotApp : WebhookApplication
                     }
                     
                     
-                    
-                    
                 }
+
+                var outputtext = text;
+
+                if (text.Contains("包子"))
+                {
+                    outputtext = "要吃肉包?";
+                }
+                if (text.Contains("不要肉包"))
+                {
+                    outputtext = "要吃菜包?";
+                }
+                if (text.Contains("不要包子"))
+                {
+                    outputtext = "吃土";
+                }
+                
+                
+                
+                
                 var message = new TextMessage("難聊機器");
 
                 await _messagingClient.ReplyMessageAsync(ev.ReplyToken, 
                     new List<ISendMessage> { message });
-                
+                /*
                 if (text.Contains("包子") )
                 {
                     message = new TextMessage("肉包" + text);
                 }
+                */
                 
                 /*
                 //回傳 hellow
