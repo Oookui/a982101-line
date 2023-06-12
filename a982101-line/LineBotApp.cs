@@ -31,20 +31,20 @@ public class LineBotApp : WebhookApplication
                 
                 
                 //使用者輸入的文字
-                var text = ((TextEventMessage)ev.Message).Text;
-                var outputText = text;
+                var Text = ((TextEventMessage)ev.Message).Text;
+                var outputText = Text;
                 
-                var outputtext = text;
+                var outputtext = Text;
 
-                if (text.Contains("包子"))
+                if (Text.Contains("包子"))
                 {
                     outputtext = "要吃肉包?";
                 }
-                if (text.Contains("不要肉包"))
+                if (Text.Contains("不要肉包"))
                 {
                     outputtext = "要吃菜包?";
                 }
-                if (text.Contains("不要包子"))
+                if (Text.Contains("不要包子"))
                 {
                     outputtext = "吃土";
                 }
@@ -52,10 +52,10 @@ public class LineBotApp : WebhookApplication
                 
                 
                     
-                if (PoolHasMsg(text))
+                if (PoolHasMsg(Text))
                 {
                     // 從記憶體池查詢資料
-                    string response = GetResponse(text);
+                    string response = GetResponse(Text);
                     result = new List<ISendMessage>
                     {
                         new TextMessage(response)
@@ -67,10 +67,10 @@ public class LineBotApp : WebhookApplication
                 
                 else
                 {
-                    if (CheckFormat(text))
+                    if (CheckFormat(Text))
                     {
                         //將資料寫入記憶體池
-                        TeachDog(text);
+                        TeachDog(Text);
                     }
                     
                    
@@ -81,7 +81,7 @@ public class LineBotApp : WebhookApplication
                 
                 
                 
-                var message = new TextMessage("難聊機器");
+                var message = new TextMessage("難聊機器+text");
 
                 await _messagingClient.ReplyMessageAsync(ev.ReplyToken, 
                     new List<ISendMessage> { message });
